@@ -1,0 +1,19 @@
+在一个mixin里面也可以嵌套另一个mixin，让@include更为方便
+    
+语法案例：
+    
+    
+    @mixin automp($margin:0 auto, padding:0) //这里设置另一个mixin
+{
+    margin:$margin;
+    padding: $padding;
+}
+    
+    
+    @mixin p-font($size:1rem, $color:black, $align:center)
+{
+    font-size: $size;   
+    color: $color;
+    text-align: $align;
+    @include automp; //把上面的mixin include进来就行了
+}

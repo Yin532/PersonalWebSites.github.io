@@ -1,0 +1,25 @@
+&符号在SCSS中可以用来充当伪选择器(pseudo)的替换符号(pseudo是什么:  a:active  a:hover)
+
+常规的pseudo语法案例：
+
+a {
+    color:blue;
+    
+    &:hover {
+        color:red;
+    }
+}
+
+
+将pseudo做成mixin，并投入使用的案例：
+@mixin text-hover($color)
+{
+    &:hover {
+        color: $color;
+    }
+}
+
+
+p {
+    @include text-hover(red);
+}

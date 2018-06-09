@@ -1,0 +1,14 @@
+如果不想每次都手动让mixin吸收值，那么可以设定默认值，这样一来，在没有设定吸收值得情况下，mixin将使用默认值作为吸收值。
+
+设定默认值语法：
+
+@mixin p-font($size:1rem, $color:black, $align:center)
+{
+    font-size: $size;   
+    color: $color;
+    text-align: $align;
+}
+
+如果多个参数中有些参数没有设定默认值，则在@include时，这些参数必须写在最前面，如：
+
+@mixin p-font($color, $size:1rem, $align:center)

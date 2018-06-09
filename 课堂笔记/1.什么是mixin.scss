@@ -1,0 +1,25 @@
+mixin实际上是两个单词：mix和in
+mixin可以将一组或多组CSS规则进行打包，方便重复使用
+
+
+
+
+mixin打包语法结构例子：
+
+@mixin p-font($size, $color, $align)
+{
+    font-size: $size;   
+    color: $color;
+    text-align: $align;
+}
+
+//括号中的变量是mixin可以吸收(take in)的值(value)，吸收的值可以直接传递给下方预先设定好的参数(argument)
+
+//上方括号中，同名变量吸收到的值就会传递(pass in)到这个参数中来，影响页面的外观
+
+
+
+
+mixin召唤(evoke)语法：
+
+@ include p-font (1.5rem, firebrick, center);  //括号中的值根据实际情况设置
